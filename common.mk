@@ -27,6 +27,13 @@ PRODUCT_COPY_FILES += \
     vendor/reloaded/prebuilt/common/bin/blacklist:system/addon.d/blacklist \
     vendor/reloaded/prebuilt/common/bin/whitelist:system/addon.d/whitelist \
 
+ifeq ($(AB_OTA_UPDATER),true)
+PRODUCT_COPY_FILES += \
+    vendor/reloaded/prebuilt/common/bin/backuptool_ab.sh:system/bin/backuptool_ab.sh \
+    vendor/reloaded/prebuilt/common/bin/backuptool_ab.functions:system/bin/backuptool_ab.functions \
+    vendor/reloaded/prebuilt/common/bin/backuptool_postinstall.sh:system/bin/backuptool_postinstall.sh
+endif
+
 # Bootanimation
 PRODUCT_COPY_FILES += \
     vendor/reloaded/prebuilt/common/media/bootanimation.zip:system/media/bootanimation.zip
