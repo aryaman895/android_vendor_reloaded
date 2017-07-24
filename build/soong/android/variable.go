@@ -7,6 +7,9 @@ type Product_variables struct {
 	Bootloader_message_offset struct {
 		Cflags []string
 	}
+	Has_legacy_camera_hal1 struct {
+		Cflags []string
+	}
 	Target_process_sdk_version_override struct {
 		Cppflags []string
 	}
@@ -31,6 +34,7 @@ type Product_variables struct {
 type ProductVariables struct {
 	Additional_gralloc_10_usage_bits      *string `json:",omitempty"`
 	Bootloader_message_offset             *int    `json:",omitempty"`
+	Has_legacy_camera_hal1                *bool   `json:",omitempty"`
 	QTIAudioPath                          *string `json:",omitempty"`
 	QTIDisplayPath                        *string `json:",omitempty"`
 	QTIMediaPath                          *string `json:",omitempty"`
