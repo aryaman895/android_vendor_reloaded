@@ -4,6 +4,9 @@ _contents := $(_contents)    "Reloaded":{$(newline)
 
 # See build/core/soong_config.mk for the add_json_* functions you can use here.
 $(call add_json_bool, BoardUsesQTIHardware, $(filter true,$(BOARD_USES_QTI_HARDWARE)))
+$(call add_json_str, QTIAudioPath, $(call project-path-for,qcom-audio))
+$(call add_json_str, QTIDisplayPath, $(call project-path-for,qcom-display))
+$(call add_json_str, QTIMediaPath, $(call project-path-for,qcom-media))
 $(call add_json_str, Specific_camera_parameter_library, $(TARGET_SPECIFIC_CAMERA_PARAMETER_LIBRARY))
 $(call add_json_bool, Target_uses_color_metadata, $(filter true,$(TARGET_USES_COLOR_METADATA)))
 $(call add_json_bool, Target_use_sdclang, $(filter true,$(if $(strip $(TARGET_USE_SDCLANG)),true,false)))

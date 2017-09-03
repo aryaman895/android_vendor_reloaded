@@ -17,6 +17,9 @@ type Product_variables struct {
 }
 
 type ProductVariables struct {
+	QTIAudioPath                          *string `json:",omitempty"`
+	QTIDisplayPath                        *string `json:",omitempty"`
+	QTIMediaPath                          *string `json:",omitempty"`
 	Specific_camera_parameter_library     *string `json:",omitempty"`
 	Target_uses_color_metadata            *bool   `json:",omitempty"`
 	Target_use_sdclang                    *bool   `json:",omitempty"`
