@@ -44,9 +44,9 @@ PRODUCT_COPY_FILES += \
     vendor/reloaded/prebuilt/common/etc/init.d/00banner:system/etc/init.d/00banner \
     vendor/reloaded/prebuilt/common/etc/init.d/90userinit:system/etc/init.d/90userinit
 
-# Init file
-PRODUCT_COPY_FILES += \
-    vendor/reloaded/prebuilt/common/etc/init/init.local.rc:system/etc/init/init.local.rc
+# Copy all ROM-specific init rc files
+$(foreach f,$(wildcard vendor/reloaded/prebuilt/common/etc/init/*.rc),\
+	$(eval PRODUCT_COPY_FILES += $(f):system/etc/init/$(notdir $f)))
 
 # Bring in camera effects
 PRODUCT_COPY_FILES +=  \
