@@ -1,10 +1,10 @@
-# Insert new variables inside our custom structure
-reloaded_soong:
-	$(hide) mkdir -p $(dir $@)
-	$(hide) (\
-	echo '{'; \
-	echo '"Reloaded": {'; \
-	echo '    "Uses_generic_camera_parameter_library": $(if $(TARGET_SPECIFIC_CAMERA_PARAMETER_LIBRARY),false,true),'; \
-	echo '    "Specific_camera_parameter_library": "$(TARGET_SPECIFIC_CAMERA_PARAMETER_LIBRARY)",'; \
-	echo '},'; \
-	echo '') > $(SOONG_VARIABLES_TMP)
+_contents := $(_contents)    "Reloaded":{$(newline)
+
+# See build/core/soong_config.mk for the add_json_* functions you can use here.
+$(call add_json_str, Specific_camera_parameter_library, $(TARGET_SPECIFIC_CAMERA_PARAMETER_LIBRARY))
+$(call add_json_bool, Uses_generic_camera_parameter_library, $(if $(TARGET_SPECIFIC_CAMERA_PARAMETER_LIBRARY),,true))
+
+# This causes the build system to strip out the last comma in our nested struct, to keep the JSON valid.
+_contents := $(_contents)__SV_END
+
+_contents := $(_contents)    },$(newline)
