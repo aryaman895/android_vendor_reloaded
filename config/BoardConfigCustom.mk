@@ -10,3 +10,11 @@ DISABLE_EAP_PROXY := true
 ifneq ($(TARGET_BUILD_VARIANT),user)
 SELINUX_IGNORE_NEVERALLOWS := true
 endif
+
+ifeq ($(BOARD_USES_QCOM_HARDWARE),true)
+    BOARD_USES_QTI_HARDWARE := true
+endif
+
+ifeq ($(BOARD_USES_QTI_HARDWARE),true)
+include vendor/reloaded/config/BoardConfigQcom.mk
+endif
