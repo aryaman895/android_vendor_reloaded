@@ -1,6 +1,9 @@
 package android
 
 type Product_variables struct {
+	Additional_gralloc_10_usage_bits struct {
+		Cppflags []string
+	}
 	Target_uses_color_metadata struct {
 		Cppflags []string
 	}
@@ -17,6 +20,7 @@ type Product_variables struct {
 }
 
 type ProductVariables struct {
+	Additional_gralloc_10_usage_bits      *string `json:",omitempty"`
 	QTIAudioPath                          *string `json:",omitempty"`
 	QTIDisplayPath                        *string `json:",omitempty"`
 	QTIMediaPath                          *string `json:",omitempty"`
