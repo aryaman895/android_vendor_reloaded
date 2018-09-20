@@ -11,6 +11,8 @@ ifneq ($(TARGET_BUILD_VARIANT),user)
 SELINUX_IGNORE_NEVERALLOWS := true
 endif
 
+include vendor/reloaded/config/BoardConfigKernel.mk
+
 ifeq ($(BOARD_USES_QCOM_HARDWARE),true)
     BOARD_USES_QTI_HARDWARE := true
 endif
