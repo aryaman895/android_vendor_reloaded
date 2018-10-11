@@ -1,9 +1,11 @@
 add_json_str_omitempty = $(if $(strip $(2)),$(call add_json_str, $(1), $(2)))
+add_json_val_default = $(call add_json_val, $(1), $(if $(strip $(2)), $(2), $(3)))
 
 _json_contents := $(_json_contents)    "Reloaded":{$(newline)
 
 # See build/core/soong_config.mk for the add_json_* functions you can use here.
 $(call add_json_str_omitempty, Additional_gralloc_10_usage_bits, $(TARGET_ADDITIONAL_GRALLOC_10_USAGE_BITS))
+$(call add_json_val_default, Bootloader_message_offset, $(BOOTLOADER_MESSAGE_OFFSET), 0)
 $(call add_json_str, QTIAudioPath, $(call project-path-for,qcom-audio))
 $(call add_json_str, QTIDisplayPath, $(call project-path-for,qcom-display))
 $(call add_json_str, QTIMediaPath, $(call project-path-for,qcom-media))
