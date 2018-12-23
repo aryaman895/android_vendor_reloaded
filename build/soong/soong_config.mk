@@ -4,7 +4,6 @@ _contents := $(_contents)    "Reloaded":{$(newline)
 
 # See build/core/soong_config.mk for the add_json_* functions you can use here.
 $(call add_json_str_omitempty, Additional_gralloc_10_usage_bits, $(TARGET_ADDITIONAL_GRALLOC_10_USAGE_BITS))
-$(call add_json_bool, BoardUsesQTIHardware, $(filter true,$(BOARD_USES_QTI_HARDWARE)))
 $(call add_json_str, QTIAudioPath, $(call project-path-for,qcom-audio))
 $(call add_json_str, QTIDisplayPath, $(call project-path-for,qcom-display))
 $(call add_json_str, QTIMediaPath, $(call project-path-for,qcom-media))
