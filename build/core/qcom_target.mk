@@ -34,11 +34,11 @@ $(call set-device-specific-path,THERMAL,thermal,hardware/qcom/thermal)
 $(call set-device-specific-path,VR,vr,hardware/qcom/vr)
 $(call set-device-specific-path,IPACFG_MGR,ipacfg-mgr,hardware/qcom/data/ipacfg-mgr)
 
-$(call wlan-set-path-variant,wlan-caf)
-$(call bt-vendor-set-path-variant,bt-caf)
+$(call wlan-set-path-variant,wlan)
+$(call bt-vendor-set-path-variant,bt)
 
 PRODUCT_CFI_INCLUDE_PATHS += \
-    hardware/qcom/wlan-caf/qcwcn/wpa_supplicant_8_lib
+    hardware/qcom/wlan/qcwcn/wpa_supplicant_8_lib
 else
 
 $(call set-device-specific-path,AUDIO,audio,hardware/qcom/audio/default)
