@@ -42,6 +42,10 @@ PRODUCT_COPY_FILES += \
     vendor/reloaded/prebuilt/common/etc/init.d/00banner:system/etc/init.d/00banner \
     vendor/reloaded/prebuilt/common/etc/init.d/90userinit:system/etc/init.d/90userinit
 
+# Permissions
+PRODUCT_COPY_FILES += \
+    vendor/reloaded/prebuilt/common/etc/permissions/privapp-permissions-reloaded.xml:system/etc/permissions/privapp-permissions-reloaded.xml
+
 # Copy all ROM-specific init rc files
 $(foreach f,$(wildcard vendor/reloaded/prebuilt/common/etc/init/*.rc),\
 	$(eval PRODUCT_COPY_FILES += $(f):system/etc/init/$(notdir $f)))
