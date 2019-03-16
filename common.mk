@@ -163,6 +163,10 @@ ifneq ($(TARGET_BUILD_VARIANT),eng)
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.adb.secure=1
 endif
 
+# Cutout control overlay
+PRODUCT_PACKAGES += \
+    NoCutoutOverlay
+
 # Versioning
 include vendor/reloaded/config/version.mk
 
