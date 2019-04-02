@@ -10,8 +10,4 @@ RELOADED_VERSION := Reloaded-$(RELOADED_REVISION)-$(RELOADED_BUILDTYPE)-$(shell 
 
 RELOADED_VERSION_PROP := Reloaded-$(RELOADED_REVISION)-$(RELOADED_BUILDTYPE)-$(shell date -u +%Y%m%d)
 
-# Apply it to build.prop
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.modversion=$(RELOADED_VERSION_PROP) \
-    ro.reloaded.version=$(RELOADED_VERSION_PROP) \
-    ro.caf.version=$(shell grep "<default revision=" .repo/manifest.xml | awk -F'"' '{print $$2}' | awk  -F "/" '{print $$3}')
+PRODUCT_BUILD_PROP_OVERRIDES += BUILD_DISPLAY_ID="$(BUILD_ID)-$(shell whoami)@$(shell hostname)"
