@@ -115,6 +115,10 @@ PRODUCT_PACKAGES += \
     SnapdragonGallery \
     SnapdragonMusic
 
+# OTA
+PRODUCT_PACKAGES += \
+    ReloadedOTA
+
 # Include explicitly to work around GMS issues
 PRODUCT_PACKAGES += \
     libprotobuf-cpp-full \
