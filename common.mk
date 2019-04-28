@@ -10,9 +10,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.com.android.dateformat=MM-dd-yyyy \
     ro.com.android.dataroaming=false \
     ro.opa.eligible_device=true \
-    ro.setupwizard.rotation_locked=true \
-    ro.caf.version=$(shell grep "<default revision=" .repo/manifest.xml | awk -F'"' '{print $$2}' | awk  -F "/" '{print $$3}') \
-    ro.reloaded.version=Reloaded-CAF-9.0-$(shell date +%Y%m%d)
+    ro.setupwizard.rotation_locked=true
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.build.selinux=1
@@ -165,6 +163,10 @@ ifneq ($(TARGET_BUILD_VARIANT),eng)
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.adb.secure=1
 endif
 
-$(call inherit-product, vendor/reloaded/themes/config.mk)
+# Versioning
+include vendor/reloaded/config/version.mk
+
+# Themes
+include vendor/reloaded/themes/config.mk
 
 $(call inherit-product-if-exists, vendor/extra/product.mk)
