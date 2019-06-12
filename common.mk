@@ -170,7 +170,4 @@ PRODUCT_PACKAGES += \
 # Versioning
 include vendor/reloaded/config/version.mk
 
-# Themes
-include vendor/reloaded/themes/config.mk
-
 $(call inherit-product-if-exists, vendor/extra/product.mk)
