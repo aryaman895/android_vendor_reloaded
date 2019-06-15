@@ -114,8 +114,7 @@ PRODUCT_PACKAGES += \
 # Snapdragon packages
 PRODUCT_PACKAGES += \
     MusicFX \
-    SnapdragonGallery \
-    SnapdragonMusic
+    SnapdragonGallery
 
 # OTA
 PRODUCT_PACKAGES += \
