@@ -18,9 +18,11 @@
 # be device and hardware independent.
 $(call project-set-path-variant,ril,TARGET_RIL_VARIANT,hardware/ril)
 
-# Rules for MTK targets
-include $(TOPDIR)vendor/reloaded/build/core/mtk_target.mk
+# Include board/platform macros
+include vendor/reloaded/build/core/utils.mk
+
+# Include vendor platform definitions
+include vendor/reloaded/build/core/vendor/*.mk
 
 # Rules for QCOM targets
 include $(TOPDIR)vendor/reloaded/build/core/qcom_target.mk
-include $(TOPDIR)vendor/reloaded/build/core/qcom_utils.mk
