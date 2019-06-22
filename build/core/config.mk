@@ -23,3 +23,4 @@ include $(TOPDIR)vendor/reloaded/build/core/mtk_target.mk
 
 # Rules for QCOM targets
 include $(TOPDIR)vendor/reloaded/build/core/qcom_target.mk
+include $(TOPDIR)vendor/reloaded/build/core/qcom_utils.mk
