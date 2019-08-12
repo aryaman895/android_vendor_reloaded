@@ -129,10 +129,13 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     SoundRecorder
 
+# Charger
+PRODUCT_PACKAGES += \
+    charger_res_images \
+
 # Custom off-mode charger
 ifeq ($(WITH_CUSTOM_CHARGER),true)
 PRODUCT_PACKAGES += \
-    charger_res_images \
     custom_charger_res_images \
     font_log.png \
     libhealthd.custom
