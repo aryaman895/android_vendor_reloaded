@@ -185,4 +185,16 @@ include vendor/reloaded/config/version.mk
 #include vendor/reloaded/themes/accents.mk
 #include vendor/reloaded/themes/themes.mk
 
+ifneq ($(HOST_OS),linux)
+ifneq ($(sdclang_already_warned),true)
+$(warning **********************************************)
+$(warning * SDCLANG is not supported on non-linux hosts.)
+$(warning **********************************************)
+sdclang_already_warned := true
+endif
+else
+# include definitions for SDCLANG
+include vendor/reloaded/sdclang/sdclang.mk
+endif
+
 $(call inherit-product-if-exists, vendor/extra/product.mk)
