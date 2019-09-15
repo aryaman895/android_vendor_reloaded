@@ -19,46 +19,46 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += persist.sys.dun.override=0
 PRODUCT_COPY_FILES += \
     vendor/reloaded/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
     vendor/reloaded/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
-    vendor/reloaded/prebuilt/common/bin/blacklist:system/addon.d/blacklist \
-    vendor/reloaded/prebuilt/common/bin/whitelist:system/addon.d/whitelist \
+    vendor/reloaded/prebuilt/common/bin/blacklist:$(TARGET_COPY_OUT_SYSTEM)/addon.d/blacklist \
+    vendor/reloaded/prebuilt/common/bin/whitelist:$(TARGET_COPY_OUT_SYSTEM)/addon.d/whitelist \
 
 ifeq ($(AB_OTA_UPDATER),true)
 PRODUCT_COPY_FILES += \
-    vendor/reloaded/prebuilt/common/bin/backuptool_ab.sh:system/bin/backuptool_ab.sh \
-    vendor/reloaded/prebuilt/common/bin/backuptool_ab.functions:system/bin/backuptool_ab.functions \
-    vendor/reloaded/prebuilt/common/bin/backuptool_postinstall.sh:system/bin/backuptool_postinstall.sh
+    vendor/reloaded/prebuilt/common/bin/backuptool_ab.sh:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_ab.sh \
+    vendor/reloaded/prebuilt/common/bin/backuptool_ab.functions:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_ab.functions \
+    vendor/reloaded/prebuilt/common/bin/backuptool_postinstall.sh:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_postinstall.sh
 endif
 
 # Bootanimation
 PRODUCT_COPY_FILES += \
-    vendor/reloaded/prebuilt/common/media/bootanimation.zip:system/media/bootanimation.zip
+    vendor/reloaded/prebuilt/common/media/bootanimation.zip:$(TARGET_COPY_OUT_SYSTEM)/media/bootanimation.zip
 
 # init.d support
 PRODUCT_COPY_FILES += \
-    vendor/reloaded/prebuilt/common/bin/sysinit:system/bin/sysinit \
-    vendor/reloaded/prebuilt/common/etc/init.d/00banner:system/etc/init.d/00banner \
-    vendor/reloaded/prebuilt/common/etc/init.d/90userinit:system/etc/init.d/90userinit
+    vendor/reloaded/prebuilt/common/bin/sysinit:$(TARGET_COPY_OUT_SYSTEM)/bin/sysinit \
+    vendor/reloaded/prebuilt/common/etc/init.d/00banner:$(TARGET_COPY_OUT_SYSTEM)/etc/init.d/00banner \
+    vendor/reloaded/prebuilt/common/etc/init.d/90userinit:$(TARGET_COPY_OUT_SYSTEM)/etc/init.d/90userinit
 
 # Permissions
 PRODUCT_COPY_FILES += \
-    vendor/reloaded/prebuilt/common/etc/permissions/privapp-permissions-reloaded.xml:system/etc/permissions/privapp-permissions-reloaded.xml
+    vendor/reloaded/prebuilt/common/etc/permissions/privapp-permissions-reloaded.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-reloaded.xml
 
 # Copy all ROM-specific init rc files
 $(foreach f,$(wildcard vendor/reloaded/prebuilt/common/etc/init/*.rc),\
-	$(eval PRODUCT_COPY_FILES += $(f):system/etc/init/$(notdir $f)))
+	$(eval PRODUCT_COPY_FILES += $(f):$(TARGET_COPY_OUT_SYSTEM)/etc/init/$(notdir $f)))
 
 # Bring in camera effects
 PRODUCT_COPY_FILES +=  \
-    vendor/reloaded/prebuilt/common/media/LMprec_508.emd:system/media/LMprec_508.emd \
-    vendor/reloaded/prebuilt/common/media/PFFprec_600.emd:system/media/PFFprec_600.emd
+    vendor/reloaded/prebuilt/common/media/LMprec_508.emd:$(TARGET_COPY_OUT_SYSTEM)/media/LMprec_508.emd \
+    vendor/reloaded/prebuilt/common/media/PFFprec_600.emd:$(TARGET_COPY_OUT_SYSTEM)/media/PFFprec_600.emd
 
 # Enable SIP+VoIP on all targets
 PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml
+    frameworks/native/data/etc/android.software.sip.voip.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.software.sip.voip.xml
 
 # Enable wireless Xbox 360 controller support
 PRODUCT_COPY_FILES += \
-    frameworks/base/data/keyboards/Vendor_045e_Product_028e.kl:system/usr/keylayout/Vendor_045e_Product_0719.kl
+    frameworks/base/data/keyboards/Vendor_045e_Product_028e.kl:$(TARGET_COPY_OUT_SYSTEM)/usr/keylayout/Vendor_045e_Product_0719.kl
 
 # Misc packages
 PRODUCT_PACKAGES += \
@@ -140,11 +140,11 @@ endif
 
 # World APN list
 PRODUCT_COPY_FILES += \
-    vendor/reloaded/prebuilt/common/etc/apns-conf.xml:system/etc/apns-conf.xml
+    vendor/reloaded/prebuilt/common/etc/apns-conf.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/apns-conf.xml
 
 # Selective SPN list for operator number who has the problem.
 PRODUCT_COPY_FILES += \
-    vendor/reloaded/prebuilt/common/etc/selective-spn-conf.xml:system/etc/selective-spn-conf.xml
+    vendor/reloaded/prebuilt/common/etc/selective-spn-conf.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/selective-spn-conf.xml
 
 PRODUCT_PACKAGE_OVERLAYS += \
 	vendor/reloaded/overlay/common
@@ -152,10 +152,10 @@ PRODUCT_PACKAGE_OVERLAYS += \
 # Proprietary latinime libs needed for Keyboard swyping
 ifneq ($(filter arm64,$(TARGET_ARCH)),)
 PRODUCT_COPY_FILES += \
-    vendor/reloaded/prebuilt/common/lib/libjni_latinime.so:system/lib/libjni_latinime.so
+    vendor/reloaded/prebuilt/common/lib/libjni_latinime.so:$(TARGET_COPY_OUT_SYSTEM)/lib/libjni_latinime.so
 else
 PRODUCT_COPY_FILES += \
-    vendor/reloaded/prebuilt/common/lib64/libjni_latinime.so:system/lib64/libjni_latinime.so
+    vendor/reloaded/prebuilt/common/lib64/libjni_latinime.so:$(TARGET_COPY_OUT_SYSTEM)/lib64/libjni_latinime.so
 endif
 
 # by default, do not update the recovery with system updates
