@@ -92,14 +92,30 @@ PRODUCT_PACKAGES += \
     CellBroadcastReceiver \
     Stk
 
-# Telephony packages
+# IMS
 PRODUCT_PACKAGES += \
     ims-ext-common \
-    ims_ext_common.xml \
+    ims_ext_common.xml
+
+# HIDL Wrapper
+PRODUCT_PACKAGES += \
     qti-telephony-hidl-wrapper \
-    qti_telephony_hidl_wrapper.xml \
+    qti_telephony_hidl_wrapper.xml
+
+# QTI Telephony Utils
+PRODUCT_PACKAGES += \
     qti-telephony-utils \
-    qti_telephony_utils.xml \
+    qti_telephony_utils.xml
+
+# QTI VNDK Framework Detect
+PRODUCT_PACKAGES += \
+    libvndfwk_detect_jni.qti \
+    libqti_vndfwk_detect \
+    libvndfwk_detect_jni.qti.vendor \
+    libqti_vndfwk_detect.vendor
+
+# Telephony-ext
+PRODUCT_PACKAGES += \
     telephony-ext
 
 PRODUCT_BOOT_JARS += \
