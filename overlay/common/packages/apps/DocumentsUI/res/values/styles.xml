@@ -21,9 +21,7 @@
         <item name="android:windowLightNavigationBar">@bool/windowLightNavigationBar</item>
     </style>
 
-    <style name="ActionBarPopupTheme" parent="@style/Theme.AppCompat.DayNight" />
-
-    <style name="DocumentsTheme" parent="@style/Theme.AppCompat.DayNight.DarkActionBar">
+    <style name="DocumentsTheme" parent="@style/Theme.AppCompat.Light.DarkActionBar">
         <item name="android:navigationBarColor">@color/navigation_bar_color</item>
         <item name="android:windowLightNavigationBar">@bool/windowLightNavigationBar</item>
     </style>
