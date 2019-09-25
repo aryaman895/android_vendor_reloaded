@@ -169,9 +169,12 @@ endif
 # by default, do not update the recovery with system updates
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += persist.sys.recovery_update=false
 
-ifneq ($(TARGET_BUILD_VARIANT),eng)
+ifeq ($(TARGET_BUILD_VARIANT),user)
 # Enable ADB authentication
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.adb.secure=1
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += ro.adb.secure=1
+else
+# Disable ADB authentication
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += ro.adb.secure=0
 endif
 
 # Cutout control overlay
