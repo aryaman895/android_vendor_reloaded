@@ -130,9 +130,9 @@ PRODUCT_PACKAGES += \
     libprotobuf-cpp-full \
     librsjni
 
-# Mms depends on SoundRecorder for recorded audio messages
+# SoundRecorder
 PRODUCT_PACKAGES += \
-    SoundRecorder
+    QtiSoundRecorder
 
 # Charger
 PRODUCT_PACKAGES += \
