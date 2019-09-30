@@ -197,6 +197,10 @@ endif
 #PRODUCT_PACKAGES += \
 #    NoCutoutOverlay
 
+# ThemePicker
+PRODUCT_PACKAGES += \
+    ThemePicker
+
 # Versioning
 include vendor/reloaded/config/version.mk
 
