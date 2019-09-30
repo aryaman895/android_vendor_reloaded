@@ -85,8 +85,7 @@ PRODUCT_PACKAGES += \
     oprofiled \
     sqlite3 \
     strace \
-    Terminal \
-    WallpaperPicker
+    Terminal
 
 PRODUCT_PACKAGES += \
     QtiDialer \
@@ -203,6 +202,14 @@ endif
 # ThemePicker
 PRODUCT_PACKAGES += \
     ThemePicker
+
+# Pixel Launcher
+PRODUCT_PACKAGES += \
+    NexusLauncherPrebuilt \
+    
+# WallpaperPicker
+PRODUCT_PACKAGES += \
+    WallpaperPickerPrebuilt
 
 # Versioning
 include vendor/reloaded/config/version.mk

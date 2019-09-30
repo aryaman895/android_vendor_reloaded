@@ -85,4 +85,7 @@
         <item>com.android.providers.downloads.ui</item>
         <item>com.android.documentsui</item>
     </string-array>
+
+    <!-- Recents Component Name -->
+    <string name="config_recentsComponentName">com.google.android.apps.nexuslauncher/com.android.quickstep.RecentsActivity</string>
 </resources>
