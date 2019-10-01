@@ -41,7 +41,8 @@ PRODUCT_COPY_FILES += \
 
 # Permissions
 PRODUCT_COPY_FILES += \
-    vendor/reloaded/prebuilt/common/etc/permissions/privapp-permissions-reloaded.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-reloaded.xml
+    vendor/reloaded/prebuilt/common/etc/sysconfig/hiddenapi-package-whitelist-reloaded.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/hiddenapi-package-whitelist-reloaded.xml \
+    vendor/reloaded/prebuilt/common/etc/permissions/privapp-permissions-reloaded.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-reloaded.xml
 
 # Copy all ROM-specific init rc files
 $(foreach f,$(wildcard vendor/reloaded/prebuilt/common/etc/init/*.rc),\
@@ -88,6 +89,7 @@ PRODUCT_PACKAGES += \
     WallpaperPicker
 
 PRODUCT_PACKAGES += \
+    QtiDialer \
     messaging \
     CellBroadcastReceiver \
     Stk
