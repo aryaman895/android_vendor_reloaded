@@ -12,6 +12,9 @@ type Product_variables struct {
 		Overrides   []string
 		Shared_libs []string
 	}
+	Should_wait_for_qsee struct {
+		Cflags []string
+	}
 	Target_init_vendor_lib struct {
 		Whole_static_libs []string
 	}
@@ -43,6 +46,7 @@ type ProductVariables struct {
 	QTIAudioPath                          *string `json:",omitempty"`
 	QTIDisplayPath                        *string `json:",omitempty"`
 	QTIMediaPath                          *string `json:",omitempty"`
+	Should_wait_for_qsee                  *bool   `json:",omitempty"`
 	Specific_camera_parameter_library     *string `json:",omitempty"`
 	Target_init_vendor_lib                *string `json:",omitempty"`
 	Target_process_sdk_version_override   *string `json:",omitempty"`
