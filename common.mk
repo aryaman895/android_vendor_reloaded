@@ -166,11 +166,12 @@ endif
 
 # World APN list
 PRODUCT_COPY_FILES += \
-    vendor/reloaded/prebuilt/common/etc/apns-conf.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/apns-conf.xml
+    vendor/reloaded/prebuilt/common/etc/apns-conf.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/apns-conf.xml \
+    vendor/reloaded/prebuilt/common/etc/apns-conf-product.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/apns-conf.xml
 
-# Selective SPN list for operator number who has the problem.
+# Selective SPN list
 PRODUCT_COPY_FILES += \
-    vendor/reloaded/prebuilt/common/etc/selective-spn-conf.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/selective-spn-conf.xml
+    vendor/reloaded/prebuilt/common/etc/spn-conf.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/spn-conf.xml
 
 PRODUCT_PACKAGE_OVERLAYS += \
 	vendor/reloaded/overlay/common
