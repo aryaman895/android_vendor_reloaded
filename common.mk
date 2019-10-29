@@ -203,6 +203,10 @@ endif
 PRODUCT_PACKAGES += \
     ThemePicker
 
+# Device Personalization Services
+PRODUCT_PACKAGES += \
+    MatchmakerPrebuilt
+
 # Pixel Launcher
 PRODUCT_PACKAGES += \
     NexusLauncherPrebuilt \
