@@ -48,6 +48,11 @@ PRODUCT_COPY_FILES += \
 $(foreach f,$(wildcard vendor/reloaded/prebuilt/common/etc/init/*.rc),\
 	$(eval PRODUCT_COPY_FILES += $(f):$(TARGET_COPY_OUT_SYSTEM)/etc/init/$(notdir $f)))
 
+# Fonts
+PRODUCT_COPY_FILES += \
+    $(call find-copy-subdir-files,*,vendor/reloaded/prebuilt/common/fonts,$(TARGET_COPY_OUT_PRODUCT)/fonts) \
+    vendor/reloaded/prebuilt/common/etc/fonts_customization.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/fonts_customization.xml
+
 # Bring in camera effects
 PRODUCT_COPY_FILES +=  \
     vendor/reloaded/prebuilt/common/media/LMprec_508.emd:$(TARGET_COPY_OUT_SYSTEM)/media/LMprec_508.emd \
@@ -198,6 +203,10 @@ endif
 # Cutout control overlay
 #PRODUCT_PACKAGES += \
 #    NoCutoutOverlay
+
+# Reloaded Android Overlays
+PRODUCT_PACKAGES += \
+    reloaded-overlays
 
 # ThemePicker
 PRODUCT_PACKAGES += \
