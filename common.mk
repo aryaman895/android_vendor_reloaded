@@ -89,7 +89,7 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     QtiDialer \
-    messaging \
+    PrebuiltBugle \
     CellBroadcastReceiver \
     Stk
 
