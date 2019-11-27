@@ -17,46 +17,46 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += persist.sys.dun.override=0
 
 # Backup Tool
 PRODUCT_COPY_FILES += \
-    vendor/reloaded/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
-    vendor/reloaded/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
-    vendor/reloaded/prebuilt/common/bin/blacklist:$(TARGET_COPY_OUT_SYSTEM)/addon.d/blacklist \
-    vendor/reloaded/prebuilt/common/bin/whitelist:$(TARGET_COPY_OUT_SYSTEM)/addon.d/whitelist \
+    vendor/reloaded/prebuilt/bin/backuptool.sh:install/bin/backuptool.sh \
+    vendor/reloaded/prebuilt/bin/backuptool.functions:install/bin/backuptool.functions \
+    vendor/reloaded/prebuilt/bin/blacklist:$(TARGET_COPY_OUT_SYSTEM)/addon.d/blacklist \
+    vendor/reloaded/prebuilt/bin/whitelist:$(TARGET_COPY_OUT_SYSTEM)/addon.d/whitelist \
 
 ifeq ($(AB_OTA_UPDATER),true)
 PRODUCT_COPY_FILES += \
-    vendor/reloaded/prebuilt/common/bin/backuptool_ab.sh:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_ab.sh \
-    vendor/reloaded/prebuilt/common/bin/backuptool_ab.functions:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_ab.functions \
-    vendor/reloaded/prebuilt/common/bin/backuptool_postinstall.sh:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_postinstall.sh
+    vendor/reloaded/prebuilt/bin/backuptool_ab.sh:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_ab.sh \
+    vendor/reloaded/prebuilt/bin/backuptool_ab.functions:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_ab.functions \
+    vendor/reloaded/prebuilt/bin/backuptool_postinstall.sh:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_postinstall.sh
 endif
 
 # Bootanimation
 PRODUCT_COPY_FILES += \
-    vendor/reloaded/prebuilt/common/media/bootanimation.zip:$(TARGET_COPY_OUT_SYSTEM)/media/bootanimation.zip
+    vendor/reloaded/prebuilt/media/bootanimation.zip:$(TARGET_COPY_OUT_SYSTEM)/media/bootanimation.zip
 
 # init.d support
 PRODUCT_COPY_FILES += \
-    vendor/reloaded/prebuilt/common/bin/sysinit:$(TARGET_COPY_OUT_SYSTEM)/bin/sysinit \
-    vendor/reloaded/prebuilt/common/etc/init.d/00banner:$(TARGET_COPY_OUT_SYSTEM)/etc/init.d/00banner \
-    vendor/reloaded/prebuilt/common/etc/init.d/90userinit:$(TARGET_COPY_OUT_SYSTEM)/etc/init.d/90userinit
+    vendor/reloaded/prebuilt/bin/sysinit:$(TARGET_COPY_OUT_SYSTEM)/bin/sysinit \
+    vendor/reloaded/prebuilt/etc/init.d/00banner:$(TARGET_COPY_OUT_SYSTEM)/etc/init.d/00banner \
+    vendor/reloaded/prebuilt/etc/init.d/90userinit:$(TARGET_COPY_OUT_SYSTEM)/etc/init.d/90userinit
 
 # Permissions
 PRODUCT_COPY_FILES += \
-    vendor/reloaded/prebuilt/common/etc/sysconfig/hiddenapi-package-whitelist-reloaded.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/hiddenapi-package-whitelist-reloaded.xml \
-    vendor/reloaded/prebuilt/common/etc/permissions/privapp-permissions-reloaded.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-reloaded.xml
+    vendor/reloaded/prebuilt/etc/sysconfig/hiddenapi-package-whitelist-reloaded.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/hiddenapi-package-whitelist-reloaded.xml \
+    vendor/reloaded/prebuilt/etc/permissions/privapp-permissions-reloaded.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-reloaded.xml
 
 # Copy all ROM-specific init rc files
-$(foreach f,$(wildcard vendor/reloaded/prebuilt/common/etc/init/*.rc),\
+$(foreach f,$(wildcard vendor/reloaded/prebuilt/etc/init/*.rc),\
 	$(eval PRODUCT_COPY_FILES += $(f):$(TARGET_COPY_OUT_SYSTEM)/etc/init/$(notdir $f)))
 
 # Fonts
 PRODUCT_COPY_FILES += \
-    $(call find-copy-subdir-files,*,vendor/reloaded/prebuilt/common/fonts,$(TARGET_COPY_OUT_PRODUCT)/fonts) \
-    vendor/reloaded/prebuilt/common/etc/fonts_customization.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/fonts_customization.xml
+    $(call find-copy-subdir-files,*,vendor/reloaded/prebuilt/fonts,$(TARGET_COPY_OUT_PRODUCT)/fonts) \
+    vendor/reloaded/prebuilt/etc/fonts_customization.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/fonts_customization.xml
 
 # Bring in camera effects
 PRODUCT_COPY_FILES +=  \
-    vendor/reloaded/prebuilt/common/media/LMprec_508.emd:$(TARGET_COPY_OUT_SYSTEM)/media/LMprec_508.emd \
-    vendor/reloaded/prebuilt/common/media/PFFprec_600.emd:$(TARGET_COPY_OUT_SYSTEM)/media/PFFprec_600.emd
+    vendor/reloaded/prebuilt/media/LMprec_508.emd:$(TARGET_COPY_OUT_SYSTEM)/media/LMprec_508.emd \
+    vendor/reloaded/prebuilt/media/PFFprec_600.emd:$(TARGET_COPY_OUT_SYSTEM)/media/PFFprec_600.emd
 
 # Enable SIP+VoIP on all targets
 PRODUCT_COPY_FILES += \
@@ -170,12 +170,12 @@ endif
 
 # World APN list
 PRODUCT_COPY_FILES += \
-    vendor/reloaded/prebuilt/common/etc/apns-conf.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/apns-conf.xml \
-    vendor/reloaded/prebuilt/common/etc/apns-conf-product.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/apns-conf.xml
+    vendor/reloaded/prebuilt/etc/apns-conf.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/apns-conf.xml \
+    vendor/reloaded/prebuilt/etc/apns-conf-product.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/apns-conf.xml
 
 # Selective SPN list
 PRODUCT_COPY_FILES += \
-    vendor/reloaded/prebuilt/common/etc/spn-conf.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/spn-conf.xml
+    vendor/reloaded/prebuilt/etc/spn-conf.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/spn-conf.xml
 
 PRODUCT_PACKAGE_OVERLAYS += \
 	vendor/reloaded/overlay/common
@@ -183,10 +183,10 @@ PRODUCT_PACKAGE_OVERLAYS += \
 # Proprietary latinime libs needed for Keyboard swyping
 ifneq ($(filter arm64,$(TARGET_ARCH)),)
 PRODUCT_COPY_FILES += \
-    vendor/reloaded/prebuilt/common/lib/libjni_latinime.so:$(TARGET_COPY_OUT_SYSTEM)/lib/libjni_latinime.so
+    vendor/reloaded/prebuilt/lib/libjni_latinime.so:$(TARGET_COPY_OUT_SYSTEM)/lib/libjni_latinime.so
 else
 PRODUCT_COPY_FILES += \
-    vendor/reloaded/prebuilt/common/lib64/libjni_latinime.so:$(TARGET_COPY_OUT_SYSTEM)/lib64/libjni_latinime.so
+    vendor/reloaded/prebuilt/lib64/libjni_latinime.so:$(TARGET_COPY_OUT_SYSTEM)/lib64/libjni_latinime.so
 endif
 
 # by default, do not update the recovery with system updates
@@ -199,10 +199,6 @@ else
 # Disable ADB authentication
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += ro.adb.secure=0
 endif
-
-# Cutout control overlay
-#PRODUCT_PACKAGES += \
-#    NoCutoutOverlay
 
 # Reloaded Android Overlays
 PRODUCT_PACKAGES += \
@@ -226,10 +222,6 @@ PRODUCT_PACKAGES += \
 
 # Versioning
 include vendor/reloaded/config/version.mk
-
-# Themes
-#include vendor/reloaded/themes/accents.mk
-#include vendor/reloaded/themes/themes.mk
 
 ifneq ($(HOST_OS),linux)
 ifneq ($(sdclang_already_warned),true)
