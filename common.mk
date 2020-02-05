@@ -18,9 +18,7 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += persist.sys.dun.override=0
 # Backup Tool
 PRODUCT_COPY_FILES += \
     vendor/reloaded/prebuilt/bin/backuptool.sh:install/bin/backuptool.sh \
-    vendor/reloaded/prebuilt/bin/backuptool.functions:install/bin/backuptool.functions \
-    vendor/reloaded/prebuilt/bin/blacklist:$(TARGET_COPY_OUT_SYSTEM)/addon.d/blacklist \
-    vendor/reloaded/prebuilt/bin/whitelist:$(TARGET_COPY_OUT_SYSTEM)/addon.d/whitelist \
+    vendor/reloaded/prebuilt/bin/backuptool.functions:install/bin/backuptool.functions
 
 ifeq ($(AB_OTA_UPDATER),true)
 PRODUCT_COPY_FILES += \
