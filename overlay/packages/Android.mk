@@ -7,6 +7,7 @@ LOCAL_REQUIRED_MODULES := \
     AccentColorAndroidGreenOverlay \
     AccentColorOrangeOverlay \
     AccentColorTealOverlay \
-    FontGoogleSansOverlay
+    FontGoogleSansOverlay \
+    FontSlateForOnePlusOverlay
 
 include $(BUILD_PHONY_PACKAGE)
