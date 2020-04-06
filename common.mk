@@ -219,6 +219,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     WallpaperPickerPrebuilt
 
+# Screen recorder
+PRODUCT_PACKAGES += \
+    Recorder
+
 # Versioning
 include vendor/reloaded/config/version.mk
 
