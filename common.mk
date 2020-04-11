@@ -69,6 +69,7 @@ PRODUCT_COPY_FILES += \
 # Misc packages
 PRODUCT_PACKAGES += \
     BluetoothExt \
+    ExactCalculator \
     libemoji \
     libsepol \
     e2fsck \
