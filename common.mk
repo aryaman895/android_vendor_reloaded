@@ -93,7 +93,7 @@ PRODUCT_PACKAGES += \
     Terminal
 
 PRODUCT_PACKAGES += \
-    QtiDialer \
+    Dialer \
     messaging \
     CellBroadcastReceiver \
     Stk
