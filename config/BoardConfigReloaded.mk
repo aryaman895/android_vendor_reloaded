@@ -6,11 +6,6 @@ endif
 # Disable qmi EAP-SIM security
 DISABLE_EAP_PROXY := true
 
-# We modify several neverallows, so let the build proceed
-ifneq ($(TARGET_BUILD_VARIANT),user)
-SELINUX_IGNORE_NEVERALLOWS := true
-endif
-
 include vendor/reloaded/config/BoardConfigKernel.mk
 
 ifeq ($(BOARD_USES_QCOM_HARDWARE),true)
