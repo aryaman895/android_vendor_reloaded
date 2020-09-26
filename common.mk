@@ -226,6 +226,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     Recorder
 
+# Long Screenshot
+PRODUCT_PACKAGES += \
+    Longshot
+
 # Versioning
 include vendor/reloaded/config/version.mk
 
