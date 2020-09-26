@@ -214,6 +214,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     NexusLauncherPrebuilt \
 
+# Retro Music Player
+PRODUCT_PACKAGES += \
+    RetroMusicPlayer
+
 # WallpaperPicker
 PRODUCT_PACKAGES += \
     WallpaperPickerPrebuilt
