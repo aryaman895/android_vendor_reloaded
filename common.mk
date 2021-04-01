@@ -214,7 +214,7 @@ PRODUCT_PACKAGES += \
 # Pixel Launcher
 PRODUCT_PACKAGES += \
     NexusLauncherPrebuilt \
-    
+
 # WallpaperPicker
 PRODUCT_PACKAGES += \
     WallpaperPickerPrebuilt
@@ -239,3 +239,8 @@ include vendor/reloaded/sdclang/sdclang.mk
 endif
 
 $(call inherit-product-if-exists, vendor/extra/product.mk)
+
+# Gapps
+ifeq ($(USE_GAPPS),true)
+include vendor/gapps/config.mk
+endif
