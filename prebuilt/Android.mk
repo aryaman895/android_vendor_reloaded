@@ -13,6 +13,18 @@ LOCAL_DEX_PREOPT    := false
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
+LOCAL_MODULE := GalleryPrebuilt
+LOCAL_MODULE_TAGS := optional
+LOCAL_SRC_FILES := priv-app/GalleryPrebuilt.apk
+LOCAL_CERTIFICATE := PRESIGNED
+LOCAL_MODULE_CLASS := APPS
+LOCAL_MODULE_SUFFIX := $(COMMON_ANDROID_PACKAGE_SUFFIX)
+LOCAL_DEX_PREOPT := false
+LOCAL_PRODUCT_MODULE := true
+LOCAL_OVERRIDES_PACKAGES := Gallery Gallery2 Gallery3D GalleryNew3D
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
 LOCAL_MODULE        := Longshot
 LOCAL_SRC_FILES     := app/Longshot.apk
 LOCAL_MODULE_TAGS   := optional

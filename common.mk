@@ -218,6 +218,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     RetroMusicPlayer
 
+# Gallery
+PRODUCT_PACKAGES += \
+    GalleryPrebuilt
+
 # WallpaperPicker
 PRODUCT_PACKAGES += \
     WallpaperPickerPrebuilt
