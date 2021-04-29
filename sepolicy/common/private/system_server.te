@@ -1,2 +1,5 @@
 # allow longshot service
 add_service(system_server, longshot_service)
+
+# allow applock service
+add_service(system_server, applock_service);
