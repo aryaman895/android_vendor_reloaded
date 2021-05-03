@@ -254,6 +254,10 @@ include vendor/reloaded/sepolicy/common/sepolicy.mk
 
 $(call inherit-product-if-exists, vendor/extra/product.mk)
 
+# OPScreenRecord
+PRODUCT_PACKAGES += \
+    OPScreenRecord
+
 # Gapps
 ifeq ($(USE_GAPPS),true)
 include vendor/gapps/config.mk
