@@ -210,10 +210,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     MatchmakerPrebuilt
 
-# Pixel Launcher
-PRODUCT_PACKAGES += \
-    NexusLauncherPrebuilt \
-
 # Retro Music Player
 PRODUCT_PACKAGES += \
     RetroMusicPlayer
